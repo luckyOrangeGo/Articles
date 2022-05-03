@@ -1,6 +1,6 @@
 # Nginx 基本
 
-## CUP安装配置
+## CUP 安装配置
 
 ```bash
 yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
@@ -36,7 +36,7 @@ make install
 
 /usr/local/webserver/nginx/sbin/nginx -v
 
-/usr/sbin/groupadd www 
+/usr/sbin/groupadd www
 
 /usr/sbin/useradd -g www www
 
@@ -63,14 +63,14 @@ http
   log_format main  '$remote_addr - $remote_user [$time_local] "$request" '
                '$status $body_bytes_sent "$http_referer" '
                '"$http_user_agent" $http_x_forwarded_for';
-  
+
 #charset gb2312;
-     
+
   server_names_hash_bucket_size 128;
   client_header_buffer_size 32k;
   large_client_header_buffers 4 32k;
   client_max_body_size 8m;
-     
+
   sendfile on;
   tcp_nopush on;
   keepalive_timeout 60;
@@ -82,14 +82,14 @@ http
   fastcgi_buffers 4 64k;
   fastcgi_busy_buffers_size 128k;
   fastcgi_temp_file_write_size 128k;
-  gzip on; 
+  gzip on;
   gzip_min_length 1k;
   gzip_buffers 4 16k;
   gzip_http_version 1.0;
   gzip_comp_level 2;
   gzip_types text/plain application/x-javascript text/css application/xml;
   gzip_vary on;
- 
+
   #limit_zone crawler $binary_remote_addr 10m;
  #下面是server虚拟主机的配置
  server
@@ -130,9 +130,7 @@ http
 
 ```
 
-
-
-## firewall配置
+## firewall 配置
 
 ```bash
 firewall-cmd --add-port=80/tcp --permanent
@@ -142,21 +140,21 @@ firewall-cmd --reload
 firewall-cmd --zone=public --list-all
 ```
 
-## OpenResty的下载和安装
+## OpenResty 的下载和安装
 
 ```bash
-yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo 
+yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
 
 yum install openresty /usr/local/openresty/nginx/conf/nginx.conf
 
 service openresty start|stop|restart|reload
 ```
 
-## LNMP环境的搭建
+## LNMP 环境的搭建
 
-### MySQL安装
+### MySQL 安装
 
-可以使用mariadb替代
+可以使用 mariadb 替代
 
 ```bash
 yum install mariadb mariadb-server
@@ -174,13 +172,13 @@ systemctl start mariadb.service
 show variables like '%character_set%';
 ```
 
-### PHP安装
+### PHP 安装
 
 ```bash
 yum install php-fpm php-mysql
 ```
 
-启动php-fpm
+启动 php-fpm
 
 ```bash
 system start php-fpm.service
