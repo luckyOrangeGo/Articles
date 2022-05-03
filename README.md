@@ -1,4 +1,4 @@
-# Typora_articles
+# TyporaArticles
 
 Personal article synchronization
 
