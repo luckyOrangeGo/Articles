@@ -162,9 +162,11 @@ service openresty start|stop|restart|reload
 yum install mariadb mariadb-server
 ```
 
-修改默认编码character set server=utf8
+修改默认编码
 
 ```bash
+character set server=utf8
+
 init connect='SET NAMES utf8'
 
 systemctl start mariadb.service
