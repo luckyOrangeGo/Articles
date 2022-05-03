@@ -1,2 +1,2 @@
 # Typora_articles
-个人文章同步
+Personal article synchronization
