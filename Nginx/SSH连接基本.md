@@ -46,3 +46,4 @@ putty
 ssh-keygen -t rsa -C 4096
 ```
 
+ system start php-fpm.servicebash
