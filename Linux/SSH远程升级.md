@@ -53,7 +53,7 @@ yum install  -y gcc gcc-c++ glibc make autoconf pcre-devel  pam-devel automake m
 
 备份openssl：
 
-```
+```bash
 find / -name openssl
 
 mv /usr/bin/openssl /usr/bin/openssl.bak
@@ -78,7 +78,7 @@ mv /usr/lib64/openssl /usr/lib64/openssl.bak
 
 解压，编译安装：
 
-```
+```bash
 wget https://www.openssl.org/source/openssl-1.1.1o.tar.gz && tar xf openssl-1.1.1o.tar.gz && cd openssl-1.1.1o/ && ./config --prefix=/usr/local/ssl -d shared && make -j 4 && make install
 
 echo '/usr/local/ssl/lib' >> /etc/ld.so.conf
@@ -88,7 +88,7 @@ ldconfig -v
 
 ## 安装openssh
 
-```
+```bash
 cd ..
 
 wget http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz
@@ -105,19 +105,19 @@ cd openssh-9.0p1/
 
 sshd_config文件修改
 
-```
+```bash
 echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && echo 'PubkeyAuthentication yes' >> /etc/ssh/sshd_config && echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
 ```
 
 备份
 
-```
+```bash
 mv /usr/sbin/sshd /usr/sbin/sshd.bak && cp -rf /usr/local/openssh/sbin/sshd /usr/sbin/sshd && mv /usr/bin/ssh /usr/bin/ssh.bak && cp -rf /usr/local/openssh/bin/ssh /usr/bin/ssh && mv /usr/bin/ssh-keygen /usr/bin/ssh-keygen.bak && cp -rf /usr/local/openssh/bin/ssh-keygen /usr/bin/ssh-keygen
 ```
 
 停止并更新服务
 
-```
+```bash
 systemctl stop ssh.service
 
 rm -rf /lib/systemd/system/sshd.service
@@ -149,3 +149,16 @@ systemctl stop xinetd
 systemctl disable xinetd 
 systemctl disable telnet.socket
 ```
+
+## 使用SSH连接，关闭防火墙23端口
+
+```bash
+firewall-cmd --list-all
+
+firewall-cmd --zone=public --remove-port=23/tcp --permanent
+
+firewall-cmd --reload
+
+firewall-cmd --list-ports
+```
+
