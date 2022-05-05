@@ -145,10 +145,15 @@ firewall-cmd --zone=public --list-all
 ```bash
 yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
 
-yum install openresty /usr/local/openresty/nginx/conf/nginx.conf
+yum install openresty
 
 service openresty start|stop|restart|reload
+
 ```
+
+nginx目录：
+
+/usr/local/openresty/nginx/conf/nginx.conf
 
 ## LNMP 环境的搭建
 
@@ -183,3 +188,35 @@ yum install php-fpm php-mysql
 ```bash
 system start php-fpm.service
 ```
+
+
+
+# Nginx命令行
+
+格式:
+
+```bash
+nginx -s reload
+```
+
+帮助: -? -h
+
+使用指定的配置文件: -c
+
+指定配置指令: -g
+
+指定运行目录: -P
+
+测试配置文件是否有语法错误: -t -T
+
+打印nginx的版本信息、编译信息等: -v -V
+
+发送信号: -s
+
+- 立刻停止服务: stop
+- 优雅的停止服务: quit
+- 重载配置文件: reload
+- 重新开始记录日志文件: reopen
+
+# Nginx热升级(重载)
+
