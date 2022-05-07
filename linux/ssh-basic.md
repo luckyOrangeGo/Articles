@@ -12,15 +12,15 @@ netstat -ntpl | grep 22 systemctl restart sshd.service
 
 配置是否允许root用户远程登录，默认允许
 
-#PermitRootLogin yes 
+\#PermitRootLogin yes
 
 公钥文件放置位置默认：
 
-​	.ssh/authorized_keys 
+​ .ssh/authorized\_keys
 
-SSH默认不用更改 
+SSH默认不用更改
 
-ssh root@10.211.55.3 
+ssh root@10.211.55.3
 
 SSH命令
 
@@ -38,7 +38,7 @@ SecureCRT
 
 Xshell
 
-putty 
+putty
 
 密钥生成
 
@@ -46,4 +46,4 @@ putty
 ssh-keygen -t rsa -C 4096
 ```
 
- system start php-fpm.servicebash
+&#x20;system start php-fpm.servicebash
