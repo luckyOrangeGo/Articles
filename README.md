@@ -1,8 +1,4 @@
----
-description: Use github update study log
----
-
-# Articles
+# TyporaArticles
 
 Personal article synchronization
 
