@@ -13,4 +13,5 @@
 * [Git](git/README.md)
   * [1.Git-basic](Git/1.Git-basic.md)
 * [Docker](docker/README.md)
-  * [1.Doker命令行基础](Docker/1.Docker-basic.md)
+  * [1.Docker命令行基础](Docker/1.Docker-basic.md)
+  * [2.Docker镜像](Docker/2.Docker-image.md)
