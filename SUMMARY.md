@@ -17,4 +17,6 @@
   * [2.Docker镜像](Docker/2.Docker-image.md)
   * [3.Docker文件挂载](Docker/3.Docker-volume.md)
   * [4.Docker网络](Docker/4.Docker-network.md)
+  * [5.Docker Compose](Docker/5.Docker-compose.md)
+  * [6.Docker Swarm](Docker/6.Docker-swarm.md)
 
